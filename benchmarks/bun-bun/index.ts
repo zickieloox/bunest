@@ -6,7 +6,7 @@ import { AppModule } from 'benchmarks/app/app.module.js'
 
 async function main() {
   const app = await NestFactory.create<NestBunApplication>(AppModule, new BunAdapter())
-  await app.listen(3000, '127.0.0.1')
+  await app.listen(3000, '0.0.0.0')
   const server = app.getHttpServer().getBunServer()
   Logger.log(`Server started on ${server?.url.toString() ?? 'http://localhost:3000'}`, 'NestApplication')
 }

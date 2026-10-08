@@ -52,7 +52,7 @@ const main = async () => {
     AppModule,
     new BunAdapter(),
   )
-  await app.listen(3000, '127.0.0.1')
+  await app.listen(3000, '0.0.0.0')
   const server = app.getHttpServer().getBunServer()
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   Logger.log(`Server started on ${server!.url.toString()}`, 'NestApplication')

@@ -35,7 +35,7 @@ class AppModule {}
 async function main() {
   const app = await NestFactory.create<NestBunApplication>(AppModule, new BunAdapter())
   app.useWebSocketAdapter(new BunWsAdapter(app))
-  await app.listen(3000, '127.0.0.1')
+  await app.listen(3000, '0.0.0.0')
   const server = app.getHttpServer().getBunServer()
   // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
   Logger.log(`Server started on ${server?.url.toString()}`, 'NestApplication')

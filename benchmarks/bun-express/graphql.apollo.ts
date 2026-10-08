@@ -49,7 +49,7 @@ const main = async () => {
   const app = await NestFactory.create(
     AppModule,
   )
-  await app.listen(3000, '127.0.0.1')
+  await app.listen(3000, '0.0.0.0')
   Logger.log(`Server started on http://localhost:3000/graphql`, 'NestApplication')
 }
 
