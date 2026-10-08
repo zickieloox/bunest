@@ -6,6 +6,9 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@dunx/core": "^3.10.1",
+    "@dunx/http": "^3.10.1",
+    "@dunx/transform": "^3.10.1",
     "@eslint/js": "^9.39.2",
     "@kiyasov/platform-hono": "^1.5.8",
     "@nestjs/apollo": "^13.2.3",
@@ -13,6 +16,7 @@
     "@nestjs/core": "^11.1.11",
     "@nestjs/graphql": "^13.2.3",
     "@nestjs/platform-express": "^11.1.11",
+    "@nestjs/platform-fastify": "11",
     "@nestjs/platform-ws": "^11.1.11",
     "@nestjs/websockets": "^11.1.11",
     "@stylistic/eslint-plugin": "^5.6.1",
@@ -34,12 +38,25 @@
     "lint": "eslint",
     "http:native": "bun benchmarks/bun-native/index.ts",
     "ws:native": "bun benchmarks/bun-native/ws.ts",
+    "http:elysia": "bun benchmarks/bun-elysia/index.ts",
+    "http:nestelia": "bun benchmarks/bun-nestelia/index.ts",
+    "http:onebun": "bun benchmarks/bun-onebun/index.ts",
+    "http:carno": "bun benchmarks/bun-carno/index.ts",
     "http:bun": "bun benchmarks/bun-bun/index.ts",
     "ws:bun": "bun benchmarks/bun-bun/ws.ts",
     "http:hono": "bun benchmarks/bun-hono/index.ts",
     "http:express": "bun benchmarks/bun-express/index.ts",
     "prehttp:node": "bun benchmarks/node-express/http.build.ts",
     "http:node": "node benchmarks/node-express/dist/index.cjs",
+    "http:dunx": "bun run --cwd benchmarks/bun-dunx index.ts",
+    "ws:dunx": "bun run --cwd benchmarks/bun-dunx ws.ts",
     "ws:ws": "bun benchmarks/bun-ws/ws.ts"
+  },
+  "dependencies": {
+    "@carno.js/core": "^1.8.2",
+    "@onebun/core": "^0.8.2",
+    "elysia": "^1.4.30",
+    "nestelia": "^1.11.2",
+    "reflect-metadata": "^0.2.2"
   }
 }
