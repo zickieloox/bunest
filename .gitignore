@@ -176,3 +176,7 @@ dist/
 
 # Socket
 *.sock
+
+# Generated benchmark output
+results/
+results_docker/
