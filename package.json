@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "benchmarks/bun-nestelia"
   ],
   "devDependencies": {
     "@dunx/core": "^3.10.1",
@@ -50,13 +51,17 @@
     "http:node": "node benchmarks/node-express/dist/index.cjs",
     "http:dunx": "bun run --cwd benchmarks/bun-dunx index.ts",
     "ws:dunx": "bun run --cwd benchmarks/bun-dunx ws.ts",
-    "ws:ws": "bun benchmarks/bun-ws/ws.ts"
+    "ws:ws": "bun benchmarks/bun-ws/ws.ts",
+    "bench": "bun benchmarks/runner.ts",
+    "bench:test": "bun test benchmarks/runner.test.ts",
+    "build:elysia-aot": "bun benchmarks/bun-elysia/build.ts",
+    "http:elysia-aot": "bun benchmarks/bun-elysia/dist/index.js"
   },
   "dependencies": {
     "@carno.js/core": "^1.8.2",
     "@onebun/core": "^0.8.2",
-    "elysia": "^1.4.30",
-    "nestelia": "^1.11.2",
-    "reflect-metadata": "^0.2.2"
+    "elysia": "2.0.0-rc.0",
+    "reflect-metadata": "^0.2.2",
+    "exact-mirror": "^1.2.6"
   }
 }

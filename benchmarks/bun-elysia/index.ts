@@ -5,7 +5,7 @@ interface EchoDto {
   data?: Record<string, unknown>
 }
 
-const app = new Elysia()
+export const app = new Elysia()
   .get('/', () => {
     return { msg: 'Hello, world!' }
   })

@@ -1,0 +1,9 @@
+{
+  "name": "benchmark-nestelia",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "elysia": "1.4.30",
+    "nestelia": "^1.11.2"
+  }
+}
